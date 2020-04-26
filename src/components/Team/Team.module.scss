@@ -1,0 +1,28 @@
+@import '../../styles/mixins/mediaQueries.scss';
+
+.teamList {
+    list-style-type: none;
+    display: contents;
+    li {
+        @include smMax {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.teamMembersContainer {
+    display: grid;
+    @include smMax {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    grid-row-gap: 40px;
+}

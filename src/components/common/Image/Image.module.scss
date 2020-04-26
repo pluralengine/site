@@ -1,0 +1,23 @@
+@import '../../../styles/mixins/mediaQueries.scss';
+
+.imageWrapper {
+    position: relative;
+    padding: 50px;
+    @include smMax {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
+    @include sm {
+        margin-bottom: -3px;
+    }
+    img {
+        @include smMax {
+            max-width: 300px;
+        }
+    }
+    .sImage {
+        position: absolute;
+        top: -30px;
+    }
+}

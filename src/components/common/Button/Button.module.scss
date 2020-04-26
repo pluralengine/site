@@ -1,0 +1,7 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins/ParagraphMixin.scss';
+@import '../../../styles/mixins/Button';
+
+.defaultButton {
+    @include Button;
+}

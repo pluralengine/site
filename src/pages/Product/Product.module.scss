@@ -1,0 +1,59 @@
+@import '../../../src/styles/variables';
+@import '../../../src/styles/mixins/mediaQueries.scss';
+@import '../../../src/styles/mixins/HeaderMixins.scss';
+@import '../../../src/styles/mixins/ParagraphMixin.scss';
+
+.fluid {
+    padding: 0;
+}
+
+.productContainer, .functionContainer {
+    .paragraph {
+        @include p;
+    }
+    .subHeader {
+        @include HeaderH2($gray-1);
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight: normal;
+        display: flex;
+        &:before {
+            content: '';
+            width: 100px;
+            display: block;
+            height: 1px;
+            background: $gray-1;
+            top: -6px;
+            left: 0;
+            align-self: center;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+    }
+    .phoneAnimation {
+        transform-origin: 100%;
+        transform: skewY(10deg);
+        transition: all .4s ease;
+    }
+    .resetAnimation {
+        transform-origin: 100%;
+        transform: skewY(0deg);
+        transition: all .4s ease;
+    }
+}
+
+.functionContainer {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include smMax {
+        display: block;
+        margin-top: 80px;
+    }
+}

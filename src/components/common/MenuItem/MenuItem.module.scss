@@ -1,0 +1,57 @@
+@import '../../../styles/mixins/ParagraphMixin';
+@import '../../../styles/variables';
+
+@keyframes hoverAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100px;
+    }
+  }
+
+
+.menuItem {
+    display: flex;
+    justify-content: flex-start;
+    &.isActive {
+        position: relative;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            &:after {
+                content: '';
+                height: 4px;
+                width: 100px;
+                background: $main-green;
+                position: absolute;
+                top: 25px;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    font-family: 'Roboto', sans-serif;
+    color: $main-dark;
+    position: relative;
+    &:hover {
+        cursor: pointer;
+        font-weight: 600;
+        color: $main-green;
+        &:after {
+            content: '';
+            height: 4px;
+            width: 100px;
+            background: $main-green;
+            position: absolute;
+            top: 25px;
+            animation: hoverAnimation .4s;
+            animation-direction: initial;
+        }
+    }
+}
